@@ -28,5 +28,29 @@ public class Subscriber {
 	
 	@Column
 	private int time;
+
+	public int getIdSubscriber() {
+		return idSubscriber;
+	}
+
+	public void setIdSubscriber(int idSubscriber) {
+		this.idSubscriber = idSubscriber;
+	}
+
+	public List<Project> getProjects() {
+		return projects;
+	}
+
+	public void setProjects(List<Project> projects) {
+		this.projects = projects;
+	}
+
+	public int getTime() {
+		return time;
+	}
+
+	public void setTime(int time) {
+		this.time = time;
+	}
 	
 }

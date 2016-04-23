@@ -9,4 +9,6 @@ public interface ProjectDao {
 	 void addProject (Project project);
 	 void updateProject (Project project);
 	 List<Project> getProjects();
+	 List<Project> findProjectsByUserId(int userId);
+
 }

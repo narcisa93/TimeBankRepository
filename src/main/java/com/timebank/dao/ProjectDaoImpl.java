@@ -41,4 +41,9 @@ public class ProjectDaoImpl implements ProjectDao{
 		return getCurrentSession().createQuery("select p from " + Project.class.getName() +" p").list();
 	}
 
+	@Override
+	public List<Project> findProjectsByUserId(int userId) {
+		return getCurrentSession().createQuery("select p from " + Project.class.getName() +" p where p.user.id = " + userId).list();
+	}
+
 }

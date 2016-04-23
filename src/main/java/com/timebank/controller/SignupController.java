@@ -12,6 +12,7 @@ import org.springframework.web.context.ServletContextAware;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.timebank.model.User;
+import com.timebank.service.ProjectService;
 import com.timebank.service.UserService;
 
 import javax.servlet.ServletContext;
@@ -33,6 +34,8 @@ public class SignupController implements ServletContextAware{
 	ServletContext servletContext;
     @Autowired
     private UserService userService;
+    @Autowired
+    private ProjectService projectService;
     @Autowired 
 	HttpSession session;
 
