@@ -29,6 +29,17 @@
       <h4 class="list-group-item-heading">Phone number</h4>
       <p class="list-group-item-text">${user.getPhoneNumber()}</p>
     </a>
+     <a href="#" class="list-group-item">
+    	<h4 class="list-group-item-heading">Addreses</h4>
+    	<br></br>
+    	<p class="list-group-item-text"><c:forEach items="${user.getAddresses()}" var="address">
+      			<p>${address.getStreet()},
+      		 	${address.getCity()},
+      		 	${address.getCountry()},
+      		 	${address.getContinent()}
+			</c:forEach>
+			</p>
+    </a>
   </div>
  </div>
 
