@@ -14,7 +14,7 @@
 <body>
 <form:form commandName="user">
  <div class="container">
- <img src="H:\timebank_fb_login2\src\main\resources\uploads\anamaria.jpg" class="img-rounded" alt="Smiley face" height="200" width="200" > 
+ <img src="/timebank/upload" alt="Smiley face" height="200" width="200"/ class="img-rounded" alt="Smiley face" height="200" width="200" > 
  
  <div class="list-group">
     <a href="#" class="list-group-item active">
@@ -33,13 +33,42 @@
  </div>
 
 	</form:form>
-
+<div class="containerProjects">
+<p>My projects</p>
+<table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Offered time</th>
+      </tr>
+    </thead>
+    <tbody>
+     <c:forEach var="projects" items="${userProjects}">
+      <tr>
+        <td>${projects.getTitle()}</td>
+        <td>${projects.getDescription()}</td>
+        <td>${projects.getOfferedTime()}</td>
+        <td>
+          <form action="/profile" method="post">
+            <input type="hidden" name="id" value=${projects.getUser().getId()} />
+             <div>
+     		 <button type="submit"  value ="ShowSubscribers" class="btn btn-default">Show Subscribers</button>
+   			 </div>
+          </form>
+        </td>
+      </tr>
+    </c:forEach>
+    </tbody>
+  </table>
+  <br/>
+  <div class="col-sm-10">
 	<br />
 	<div class="col-sm-offset-1 col-sm-10">
-	<a href="/timebank/users">All Users</a> |
+	<a href="/timebank/project">Create project</a>  |
 	<a href="/timebank/login">Login</a> |
 	<a href="/timebank/">Sign Up</a>
-	<a href="/timebank/newsFeed"></a>
+	<a href="/timebank/newsFeed">News Feed</a>
 	</div>
 </body>
 </html>

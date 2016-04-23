@@ -32,4 +32,12 @@ public class ProjectServiceImpl implements ProjectService{
 		return projectDao.getProjects();
 	}
 
+	@Override
+	public List<Project> findProjectsByUserId(int userId) {
+		// TODO Auto-generated method stub
+		return projectDao.findProjectsByUserId(userId);
+	}
+	
+	
+
 }

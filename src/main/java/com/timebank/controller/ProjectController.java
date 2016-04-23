@@ -31,13 +31,12 @@ public class ProjectController {
 	
 	@RequestMapping(method = RequestMethod.POST)
     public String createProject (@Valid Project project, BindingResult result, ModelMap modelMap) {
-         
+		System.out.println(project.getOfferedTime());
 		projectService.addProject(project);
+		System.out.println("Insert successful!!!");
 		System.out.print(project.toString());
         return "result";
     }
  
-	public void nimic(){
-		
-	}
+	
 }

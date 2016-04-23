@@ -7,8 +7,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.timebank.model.Project;
 import com.timebank.model.User;
 import com.timebank.model.UserLoginHistory;
+import com.timebank.service.ProjectService;
 import com.timebank.service.UserService;
 
 import java.text.DateFormat;
@@ -26,6 +28,8 @@ public class LoginController {
 	HttpSession session;
     @Autowired
     UserService userService;
+    @Autowired
+    private ProjectService projectService;
 
     @RequestMapping (method = RequestMethod.GET)
     public String viewLogin (ModelMap modelMap) {
@@ -48,6 +52,9 @@ public class LoginController {
                 modelMap.addAttribute("user",user);
                 session.setAttribute("user", user);
                 modelMap.addAttribute("resultMessage", "Congratulations " + user.getFullName() + "! You are Successfully Logged in.");
+                List<Project> userProjects = projectService.findProjectsByUserId(user.getId());
+                System.out.println(userProjects.toString());
+                modelMap.addAttribute("userProjects", userProjects);
                 return "profile";
             }
         }
