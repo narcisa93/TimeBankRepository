@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  
+  
 </head>
 
 <body>
@@ -18,23 +20,28 @@
 	<h2>Create profile</h2>
 	<form  data-toggle="validator" role="form">
        
+    <div class="row">
+     <div class="col-xs-12 col-sm-6 col-md-6">
     <div class="form-group">
       <label class="control-label" for="firstName">First name:</label>
       <div>
         <form:input path="firstName" class="form-control" placeholder="Enter first name" type="text"/>
         <form:errors path="firstName" />
       </div>
+      </div>
     </div>
     
      <div class="form-group">
+     <div class="col-xs-12 col-sm-6 col-md-6">
       <label class="control-label" for="lastName">Last name:</label>
       <div>
         <form:input path="lastName"  class="form-control" placeholder="Enter last name" type="text"/>
         <form:errors path="lastName" />
       </div>
+       </div>
     </div>
     
-     
+     </div>
     <div class="form-group">
     <label class="control-label" for="email">Email:</label>
     <div>
