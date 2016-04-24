@@ -49,14 +49,7 @@
         <td>${projects.getTitle()}</td>
         <td>${projects.getDescription()}</td>
         <td>${projects.getOfferedTime()}</td>
-        <td>
-          <form action="/profile" method="post">
-            <input type="hidden" name="id" value=${projects.getUser().getId()} />
-             <div>
-     		 <button type="submit"  value ="ShowSubscribers" class="btn btn-default">Show Subscribers</button>
-   			 </div>
-          </form>
-        </td>
+         <td><a href="/timebank/subscriber?id=${projects.getIdProject()}">Show Subscribers</a></td>
       </tr>
     </c:forEach>
     </tbody>

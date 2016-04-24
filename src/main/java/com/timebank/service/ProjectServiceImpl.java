@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.timebank.dao.ProjectDao;
 import com.timebank.model.Project;
+import com.timebank.model.Subscriber;
 
 @Service
 @Transactional
@@ -36,6 +37,17 @@ public class ProjectServiceImpl implements ProjectService{
 	public List<Project> findProjectsByUserId(int userId) {
 		// TODO Auto-generated method stub
 		return projectDao.findProjectsByUserId(userId);
+	}
+
+	@Override
+	public Project getProject(int id) {
+		// TODO Auto-generated method stub
+		return projectDao.getProject(id);
+	}
+
+	@Override
+	public void addSubscribers(Subscriber subscriber, int idProject) {
+		projectDao.addSubscribers(subscriber, idProject);		
 	}
 	
 	
