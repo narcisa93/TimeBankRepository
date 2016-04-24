@@ -108,24 +108,25 @@
                 </div>
             </div>
         </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="service-box">
-					  <img src="<c:url value="/resources/static/img/portfolio/boy_avatar-round.png"/>" class="img-responsive" alt="" height="200" width="200">
-                        <p class="text-muted">John wants to learn Spanish.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="service-box">
-					  <img src="<c:url value="/resources/static/img/portfolio/girl_round_avatar.png"/>" class="img-responsive" alt="" height="200" width="200">
-                        <p class="text-muted">Kelly can help him!</p>
-                    </div>
-                </div>
-                 
-               
+       <div class="container">
+    <div class="row">
+		<div class="col-md-2"/>
+        <div class="col-md-2 text-center">
+            <div class="service-box">
+				<img src="<c:url value="/resources/static/img/portfolio/boy_avatar-round.png"/>" class="img-responsive" alt="" height="200" width="200">
+				<p class="text-muted">John wants to learn Spanish.</p>
+			</div>
+        </div>
+		<div class="col-md-4"/>
+        <div class="col-md-2 text-center">
+            <div class="service-box">
+				<img src="<c:url value="/resources/static/img/portfolio/girl_round_avatar.png"/>" class="img-responsive" alt="" height="200" width="200">
+                <p class="text-muted">Kelly can help him!</p>
             </div>
         </div>
+		<div class="col-md-2"/>
+	</div>
+</div>
     </section>
 
     <section class="no-padding" id="portfolio">

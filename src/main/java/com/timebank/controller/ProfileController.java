@@ -42,7 +42,7 @@ public class ProfileController {
 	  HttpSession session;
 	  
 	  
-	  @RequestMapping(method = RequestMethod.GET)
+	  @RequestMapping(method = RequestMethod.GET, value="/showImage")
 	 public void showImage(HttpServletRequest request,
 	            HttpServletResponse response) throws FileNotFoundException, IOException {
 		    response.setContentType("image/jpeg");

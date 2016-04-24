@@ -56,6 +56,7 @@ public class NewsFeedController {
 		//subscriberService.addSubscriber(subscriber);
   		//projectService.addProject(project);
         modelMap.addAttribute("projects", projectService.getProjects());
+        modelMap.addAttribute("successMessage","Applied successfully!");
         return "newsFeed";
     }
 	
