@@ -22,7 +22,7 @@ import javax.servlet.http.HttpSession;
 
 
 @Controller
-@RequestMapping ("/login")
+@RequestMapping ("/")
 public class LoginController {
 	@Autowired 
 	HttpSession session;
@@ -34,7 +34,7 @@ public class LoginController {
     @RequestMapping (method = RequestMethod.GET)
     public String viewLogin (ModelMap modelMap) {
         modelMap.addAttribute("user", new User());
-        return "login";
+        return "index";
     }
 
     @RequestMapping (method = RequestMethod.POST)

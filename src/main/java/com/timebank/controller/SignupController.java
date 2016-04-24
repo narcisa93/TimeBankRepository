@@ -28,7 +28,7 @@ import java.util.Date;
 import java.util.List;
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("/signup")
 public class SignupController implements ServletContextAware{
 
 	ServletContext servletContext;

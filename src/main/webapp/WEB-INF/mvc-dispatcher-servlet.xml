@@ -15,7 +15,7 @@
 	<context:property-placeholder
 		location="classpath:properties/database.properties" />
 		
-     <mvc:resources mapping="/resources/**" location="/resources/images/" />
+     <!--  <mvc:resources mapping="/resources/**" location="/WEB-INF/resources/static/" />-->
 
 	<mvc:annotation-driven />
 	<mvc:default-servlet-handler />

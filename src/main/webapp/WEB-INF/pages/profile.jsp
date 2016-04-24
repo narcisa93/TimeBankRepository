@@ -20,7 +20,7 @@
  <div class="list-group">
 
  	 <div class="col-sm-3">
- <img src="/timebank/upload" alt="Smiley face" height="200" width="200"/ class="img-rounded" alt="Smiley face" height="200" width="200" > 
+ <img src="/timebank/upload" alt="https://success.salesforce.com/resource/1460937600000/sharedlayout/img/new-user-image-default.png" height="200" width="200"/ class="img-rounded" alt="Smiley face" height="200" width="200" > 
 	</div>
 
  <div class="col-sm-9">
@@ -84,6 +84,8 @@
 	<a href="/timebank/login">Login</a> |
 	<a href="/timebank/">Sign Up</a>
 	<a href="/timebank/newsFeed">News Feed</a>
+		<a href="/timebank/logout">Logout</a>
+	
 	</div>
 </body>
 </html>

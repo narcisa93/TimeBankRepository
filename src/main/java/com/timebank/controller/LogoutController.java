@@ -19,7 +19,7 @@ public class LogoutController {
     @RequestMapping (method = RequestMethod.GET)
      public String logout(ModelMap modelMap ) {
         session.invalidate();
-        return "login";
+        return "index";
      }
 
 }
