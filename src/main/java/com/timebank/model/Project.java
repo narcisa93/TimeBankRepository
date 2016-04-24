@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -37,9 +38,9 @@ public class Project implements Serializable {
 	@JoinColumn(name = "user_id", nullable = false)
 	private User user;
 
-    @ManyToMany
+    @ManyToMany (cascade = CascadeType.ALL)
     @JoinTable(
-        name="ACTIVITY",
+        name="ACTIVITY", 
         joinColumns=@JoinColumn(name="id_project", referencedColumnName="id_project"),
         inverseJoinColumns=@JoinColumn(name="id_subscriber", referencedColumnName="id_subscriber"))
 	private List<Subscriber>subscribers = new ArrayList<Subscriber>();
@@ -80,8 +81,16 @@ public class Project implements Serializable {
 		return offeredTime;
 	}
 
-	public void setOfferedTimeTime(int offeredTime) {
-		this.offeredTime = offeredTime;
+	public List<Subscriber> getSubscribers() {
+		return subscribers;
 	}
 
+	public void setSubscribers(List<Subscriber> subscribers) {
+		this.subscribers = subscribers;
+	}
+
+	public void setOfferedTime(int offeredTime) {
+		this.offeredTime = offeredTime;
+	}
+   
 }

@@ -14,20 +14,22 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table (name = "subscribers")
+@Table(name = "subscribers")
 public class Subscriber {
 
 	@Id
-    @Column (name = "id_subscriber")
-    @GeneratedValue (strategy = GenerationType.AUTO)
-    private int idSubscriber;
-	
+	@Column(name = "id_subscriber")
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int idSubscriber;
 
-	@ManyToMany(mappedBy="subscribers")
-    private List<Project> projects;
-	
+	@ManyToMany(mappedBy = "subscribers")
+	private List<Project> projects;
+
 	@Column
 	private int time;
+
+	@ManyToOne
+	private User user;
 
 	public int getIdSubscriber() {
 		return idSubscriber;
@@ -52,5 +54,14 @@ public class Subscriber {
 	public void setTime(int time) {
 		this.time = time;
 	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
 	
 }

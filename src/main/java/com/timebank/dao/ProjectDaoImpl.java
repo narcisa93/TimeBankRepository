@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.timebank.model.Project;
+import com.timebank.model.Subscriber;
 import com.timebank.model.User;
 
 @Repository
@@ -44,6 +45,21 @@ public class ProjectDaoImpl implements ProjectDao{
 	@Override
 	public List<Project> findProjectsByUserId(int userId) {
 		return getCurrentSession().createQuery("select p from " + Project.class.getName() +" p where p.user.id = " + userId).list();
+	}
+
+	@Override
+	public Project getProject(int id) {
+	    Project project = (Project) getCurrentSession().get(Project.class, id);
+	    return project;
+	}
+
+	@Override
+	public void addSubscribers(Subscriber subscriber, int idProject) {
+
+		Project project =  (Project) getCurrentSession().get(Project.class, idProject);
+		project.getSubscribers().add(subscriber);
+		getCurrentSession ().merge(project);	
+
 	}
 
 }

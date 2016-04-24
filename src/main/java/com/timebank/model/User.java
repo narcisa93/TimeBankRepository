@@ -38,8 +38,7 @@ public class User {
     
     @Column (name = "gender")
     String gender;
-   // @Column (name = "birth_date")
-   // Date birthDate;
+   
     @Column (name = "phone_number")
     String phoneNumber;
     
@@ -61,7 +60,9 @@ public class User {
     @JoinColumn (name = "user_id")
     private List<Address> addresses = new ArrayList<Address>();
 
-
+    @OneToMany (fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn (name = "user_id")
+    private List<Subscriber> subscriber = new ArrayList<Subscriber>();
     
     @ManyToMany
     @JoinTable(
@@ -154,14 +155,6 @@ public class User {
 		this.gender = gender;
 	}
 
-	/*public Date getBirthDate() {
-		return birthDate;
-	}
-
-	public void setBirthDate(Date birthDate) {
-		this.birthDate = birthDate;
-	}
-*/
 	public String getPhoneNumber() {
 		return phoneNumber;
 	}
