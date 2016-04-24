@@ -54,6 +54,7 @@ public class LoginController {
                 modelMap.addAttribute("resultMessage", "Congratulations " + user.getFullName() + "! You are Successfully Logged in.");
                 List<Project> userProjects = projectService.findProjectsByUserId(user.getId());
                 System.out.println(userProjects.toString());
+                System.out.println("see addresses"+user.getAddresses());
                 modelMap.addAttribute("userProjects", userProjects);
                 return "profile";
             }

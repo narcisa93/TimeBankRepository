@@ -45,6 +45,9 @@ public class User {
     @Column (name = "profile_picture")
     String profilePicture;
     
+    @OneToOne (fetch = FetchType.EAGER, mappedBy = "user")
+    private TimeAccount timeAccount;
+       
     
     @OneToMany (fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn (name = "user_id")

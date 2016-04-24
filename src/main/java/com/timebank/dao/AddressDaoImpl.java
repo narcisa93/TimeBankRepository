@@ -70,6 +70,8 @@ public class AddressDaoImpl implements AddressDao {
 		query.setParameter(user.getId(),10);
 		List<Address> results = query.list();
 		return results;
+		
+	
 	}
 
 	@Override
@@ -79,22 +81,7 @@ public class AddressDaoImpl implements AddressDao {
 	}
 
 	
-	/*@Override
-	public List<Address> getAddress(int idAddress) {
-		User user = (User)session.getAttribute("user");
-		String hql = "FROM addresses a WHERE a.user_id = :user_id";
-		Query query = getCurrentSession().createQuery(hql);
-		query.setParameter(user.getId(),10);
-		
-		List<Address> results = query.list();
-		/*for(int i=0;i<results.size();i++){
-		System.out.println("results"+results.get(i).getStreet()+results.get(i).getCity()
-				+results.get(i).getCountry()+results.get(i).getContinent()+"\n");
-		
-		}
-	    // Address address =(Address)getCurrentSession().get(Address.class, idAddress);
-	   //  Address address =(Address)getCurrentSession().createQuery(" from address ");//.get(Address.class, idAddress);
-	     return results;
-	}*/
+
+
 
 }

@@ -36,10 +36,10 @@ import com.timebank.model.User;
 @RequestMapping(value="/upload")
 public class ProfileController {
 	 private static final int DEFAULT_BUFFER_SIZE = 10240; // 10KB.
-	  String filePath ="C:\\Users\\Narcisa\\git\\TImebankRepo\\timebankRegistration\\src\\main\\resources\\uploads";
+	  String filePath ="C:\\Users\\Roxana\\git\\TimeBankRepository\\src\\main\\resources\\uploads";
 
 	  @Autowired 
-		HttpSession session;
+	  HttpSession session;
 	  
 	  
 	  @RequestMapping(method = RequestMethod.GET)

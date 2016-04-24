@@ -10,14 +10,24 @@
 	  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 	  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	  
+	    
 </head>
 <body>
 <form:form commandName="user">
  <div class="container">
- <img src="/timebank/upload" alt="Smiley face" height="200" width="200"/ class="img-rounded" alt="Smiley face" height="200" width="200" > 
  
  <div class="list-group">
-    <a href="#" class="list-group-item active">
+
+ 	 <div class="col-sm-3">
+ <img src="/timebank/upload" alt="Smiley face" height="200" width="200"/ class="img-rounded" alt="Smiley face" height="200" width="200" > 
+	</div>
+
+ <div class="col-sm-9">
+ 	<a href="#" class="list-group-item active">
+      <h4 class="list-group-item-heading">About</h4>
+    </a>
+    <a href="#" class="list-group-item">
       <h4 class="list-group-item-heading">Name</h4>
       <p class="list-group-item-text">${user.getFullName()}</p>
     </a>
@@ -31,18 +41,19 @@
     </a>
      <a href="#" class="list-group-item">
     	<h4 class="list-group-item-heading">Addreses</h4>
-    	<br></br>
-    	<p class="list-group-item-text"><c:forEach items="${user.getAddresses()}" var="address">
-      			<p>${address.getStreet()},
+    	<p class="list-group-item-text">
+    	<c:forEach items="${user.getAddresses()}" var="address">
+      		 <p>${address.getStreet()},
       		 	${address.getCity()},
       		 	${address.getCountry()},
       		 	${address.getContinent()}
 			</c:forEach>
 			</p>
+			<a href="/timebank/address">Update your address</a>
     </a>
   </div>
  </div>
-
+ </div>
 	</form:form>
 <div class="containerProjects">
 <p>My projects</p>
