@@ -64,7 +64,7 @@ public class User {
     @JoinColumn (name = "user_id")
     private List<Subscriber> subscriber = new ArrayList<Subscriber>();
     
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(
         name="SKILLS_USERS",
         joinColumns=@JoinColumn(name="user_id", referencedColumnName="id"),
@@ -169,6 +169,22 @@ public class User {
 
 	public void setProfilePicture(String profilePicture) {
 		this.profilePicture = profilePicture;
+	}
+
+	public TimeAccount getTimeAccount() {
+		return timeAccount;
+	}
+
+	public void setTimeAccount(TimeAccount timeAccount) {
+		this.timeAccount = timeAccount;
+	}
+
+	public List<Subscriber> getSubscriber() {
+		return subscriber;
+	}
+
+	public void setSubscriber(List<Subscriber> subscriber) {
+		this.subscriber = subscriber;
 	}
     
 }

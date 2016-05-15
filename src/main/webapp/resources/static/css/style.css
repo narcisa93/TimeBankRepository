@@ -1,0 +1,64 @@
+body{
+    background-color: #fafafa;
+}
+div.posts {
+    /*background-color:black;
+    color:white;*/
+    margin-bottom:20px;
+    padding:20px;
+    border: 1px solid #ddd;
+    background-color: #FFF;
+} 
+.container{
+    width: 90%;
+}
+footer{
+    text-align: center;
+    padding: 50px 0;
+    width: 100%;
+    float: left;
+}
+.user-pic img{
+    max-height: 150px;
+    max-width: 150px;
+    float: left;
+}
+.user-info{
+    border-bottom: 1px solid rgb(229, 229, 229);
+    margin-bottom: 5px;
+    float: left;
+    width: calc(100% - 180px);
+    padding: 0px 0px;
+    margin-left: 30px;
+    color: black;
+
+}
+.user-prof img{
+    max-width: 150px;
+    float: left;
+    margin-right: 10px;
+    background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJfWbh87niwulggD04G4CByg8o5pkIiAl8vpVfrz1U2VFJB6iY');
+    
+}
+.btn.btn-success{
+    margin-top: 2%;
+}
+.user-basic-info{
+    min-width: 50%;
+}
+.user-prof{
+    width: 100%;
+    clear: both;
+}
+.skills{
+    padding: 20px 0;
+    float: left;
+    clear: both;
+}
+.left-side{
+    position: fixed;
+}
+.right-side{
+    float: right;
+    max-height: 100%;
+}

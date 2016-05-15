@@ -6,12 +6,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
 	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-<link href="<c:url value="/resources/static/css/style.css"/>" rel="stylesheet" type="text/css">
+<link href="<c:url value="/resources/static/css/style.css"/>"
+	rel="stylesheet" type="text/css">
 <script type="text/javascript">
-function showElem() {
-    document.getElementById("success").style.visibility = "visible"; 
-	
-}
+	function showElem() {
+		document.getElementById("success").style.visibility = "visible";
+
+	}
 </script>
 </head>
 <body>
@@ -52,13 +53,15 @@ function showElem() {
 							<img src="/timebank/upload">
 						</div>
 						<div class="user-info">
-							<p>${project.getUser().getFullName ()} offers ${project.getTitle()}</p>
+							<p>${project.getUser().getFullName ()} offers
+								${project.getTitle()}</p>
 						</div>
 						<form action="/timebank/newsFeed" method="post">
-						<input type="hidden" name="id" value=${project.getIdProject() } />
-						<button type="submit" class="btn btn-success pull-right" onclick="showElem();">Apply</button>
-						<input type="hidden" name="id" value=${successMessage} />
-						
+							<input type="hidden" name="id" value=${project.getIdProject() } />
+							<button type="submit" class="btn btn-success pull-right"
+								onclick="showElem();">Apply</button>
+							<input type="hidden" name="id" value=${successMessage } />
+
 						</form>
 					</div>
 				</c:forEach>

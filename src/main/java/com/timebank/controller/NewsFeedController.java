@@ -1,7 +1,5 @@
 package com.timebank.controller;
 
-
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,7 +19,7 @@ import com.timebank.service.ProjectService;
 import com.timebank.service.SubscriberService;
 
 @Controller
-@RequestMapping ("/newsFeed")
+@RequestMapping("/newsFeed")
 public class NewsFeedController {
 
 	@Autowired
@@ -30,34 +28,29 @@ public class NewsFeedController {
 	SubscriberService subscriberService;
 	@Autowired
 	HttpSession session;
-	
-	@RequestMapping (method = RequestMethod.GET)
-    public String displayPosts (ModelMap modelMap) {
-        modelMap.addAttribute("projects", projectService.getProjects());
-        return "newsFeed";
-    }
-	
-	 
-	@RequestMapping (method = RequestMethod.POST)
+
+	@RequestMapping(method = RequestMethod.GET)
+	public String displayPosts(ModelMap modelMap) {
+		modelMap.addAttribute("projects", projectService.getProjects());
+		return "newsFeed";
+	}
+
+	@RequestMapping(method = RequestMethod.POST)
 	public String apply(@RequestParam int id, ModelMap modelMap) {
-		//inseram un subscriber
-        System.out.println(id);
-        Project project = projectService.getProject(id);
-        User loggedUser = (User) session.getAttribute("user");
-  		Subscriber subscriber = new Subscriber();
-  		subscriber.setUser(loggedUser);
-  		List<Subscriber>subscribers = new ArrayList<Subscriber>();
-  		subscribers.add(subscriber);
-  		//project.setSubscribers(subscribers);
-  		for(Subscriber s: subscribers)
-  		{
-  		projectService.addSubscribers(s, project.getIdProject());
-  		}
-		//subscriberService.addSubscriber(subscriber);
-  		//projectService.addProject(project);
-        modelMap.addAttribute("projects", projectService.getProjects());
-        modelMap.addAttribute("successMessage","Applied successfully!");
-        return "newsFeed";
-    }
-	
+		System.out.println(id);
+		Project project = projectService.getProject(id);
+		User loggedUser = (User) session.getAttribute("user");
+		Subscriber subscriber = new Subscriber();
+		subscriber.setUser(loggedUser);
+		List<Subscriber> subscribers = new ArrayList<Subscriber>();
+		subscribers.add(subscriber);
+		for (Subscriber s : subscribers) {
+			projectService.addSubscribers(s, project.getIdProject());
+		}
+
+		modelMap.addAttribute("projects", projectService.getProjects());
+		modelMap.addAttribute("successMessage", "Applied successfully!");
+		return "newsFeed";
+	}
+
 }

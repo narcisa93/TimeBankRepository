@@ -19,34 +19,25 @@ import com.timebank.service.AddressService;
 @Controller
 @RequestMapping("/address")
 public class AddressController {
-	
+
 	@Autowired
 	AddressService addressService;
-	
+
 	@Autowired
 	HttpSession session;
-	
-	@RequestMapping (method = RequestMethod.GET)
-    public String viewAddress (ModelMap modelMap) {
-		 modelMap.addAttribute("address", new Address());
-        return "address";
-    }
 
-   /* @RequestMapping (method = RequestMethod.POST)
-    public String deleteUsers (@RequestParam int id, ModelMap modelMap) {
-        System.out.println(id);
-        addressService.deleteAddress(id);
-        modelMap.addAttribute("address", addressService.getAddress(id));
-        return "address";
-    }*/
-    
-    @RequestMapping(method = RequestMethod.POST)
-    public String createAddress(@Valid Address address, BindingResult result, ModelMap modelMap) {
-         
-    	
+	@RequestMapping(method = RequestMethod.GET)
+	public String viewAddress(ModelMap modelMap) {
+		modelMap.addAttribute("address", new Address());
+		return "address";
+	}
+
+	@RequestMapping(method = RequestMethod.POST)
+	public String createAddress(@Valid Address address, BindingResult result, ModelMap modelMap) {
+
 		addressService.addAddress(address);
 		System.out.print(address.toString());
-        return "result";
-    }
+		return "result";
+	}
 
 }
