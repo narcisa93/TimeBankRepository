@@ -2,10 +2,15 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-
+<%
+response.setHeader("Cache-Control","no-cache");
+response.setHeader("Cache-Control","no-store");
+response.setHeader("Pragma","no-cache");
+response.setDateHeader ("Expires", 0);
+%>
 <html>
 <head>
-<title>Profile</title>
+<title>Profile MODIFICARELUATA</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
@@ -100,7 +105,7 @@
 										</a> <a href="#" class="list-group-item">
 											<h4 class="list-group-item-heading">Addreses</h4>
 											<p class="list-group-item-text">
-												<c:forEach items="${user.getAddresses()}" var="address">
+												<c:forEach items="${userAddresses}" var="address">
 													<p>${address.getStreet()},${address.getCity()},
 														${address.getCountry()}, ${address.getContinent()}
 												</c:forEach>

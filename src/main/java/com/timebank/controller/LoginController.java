@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.timebank.model.Address;
 import com.timebank.model.Project;
 import com.timebank.model.User;
 import com.timebank.model.UserLoginHistory;
@@ -62,6 +63,10 @@ public class LoginController {
 				System.out.println(userProjects.toString());
 				System.out.println("see addresses" + user.getAddresses());
 				modelMap.addAttribute("userProjects", userProjects);
+				if(session.getAttribute("userAddresses")==null)
+				{
+				session.setAttribute("userAddresses", user.getAddresses());
+				}
 				return "profile";
 			}
 		}

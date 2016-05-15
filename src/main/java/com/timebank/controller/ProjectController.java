@@ -35,7 +35,7 @@ public class ProjectController {
 		projectService.addProject(project);
 		System.out.println("Insert successful!!!");
 		System.out.print(project.toString());
-        return "result";
+        return "profile";
     }
  
 	

@@ -1,5 +1,7 @@
 package com.timebank.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
@@ -37,7 +39,13 @@ public class AddressController {
 
 		addressService.addAddress(address);
 		System.out.print(address.toString());
-		return "result";
+		User user = (User)session.getAttribute("user");
+		System.out.println("adresses in session: "+user.getAddresses());
+		List<Address>ad = user.getAddresses();
+		ad.add(address);
+		session.setAttribute("addresses", ad);
+		return "profile";
 	}
 
+	
 }

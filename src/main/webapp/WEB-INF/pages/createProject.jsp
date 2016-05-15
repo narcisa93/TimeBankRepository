@@ -23,7 +23,7 @@
 							class="icon-bar"></span> <span class="icon-bar"></span> <span
 							class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="#">Profile</a>
+					<a class="navbar-brand" href="#">Project</a>
 				</div>
 				<div class="collapse navbar-collapse">
 					<ul class="nav navbar-nav navbar-left">
@@ -80,9 +80,6 @@
 
 
 	</form:form>
-	<div class="col-sm-10">
-		<a href="/timebank/users">All Users</a> | <a href="/timebank/login">Login</a>
-		| <a href="/timebank/">Sign Up</a>
-	</div>
+	
 </body>
 </html>
